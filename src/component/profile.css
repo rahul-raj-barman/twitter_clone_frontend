@@ -1,0 +1,111 @@
+.first-section {
+    background-color: rgb(56, 96, 229);
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.posts-comments {
+    width: 50vw !important;
+    margin-top: 2vh;
+}
+
+.top-section {
+    height: 20vh;
+    margin-bottom: 8px;
+    margin-top: 5vh;
+    background-color: rgb(71, 163, 212);
+}
+
+.profile-cont {
+    width: 60vw;
+    position: relative;
+    left: 12vw;
+    margin-bottom: 50px;
+}
+
+.profile-identity {
+    padding-left: 16px;
+    padding-right: 16px;
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.sec-heading {
+    padding-top: 5vh;
+    font-size: 1.1rem;
+}
+
+.profile-img img {
+    width: 6rem;
+    height: 6rem;
+    margin-top: -55px;
+    border-radius: 50%;
+
+}
+
+.about-profile {
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: space-between;
+
+}
+
+.username-cont {
+    padding-left: 16px;
+}
+
+.profile-date-location {
+    padding-right: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.follow-details span {
+    padding-left: 16px;
+    padding-right: 2rem;
+    padding-right: 16px;
+}
+
+.username {
+    font-size: 1.4rem;
+    font-weight: 550;
+    color: rgb(48, 47, 47);
+}
+
+.upload-profile-pic button{
+    color: rgb(71, 163, 212);
+    box-shadow: none;
+    background-color: #FFFFFF ;
+    border: 1.4px solid rgb(71, 163, 212);
+    border-radius: 7%;
+    padding: 3px;
+}
+
+.edit-profile button{
+    color: rgb(72, 79, 83);
+    box-shadow: none;
+    background-color: #FFFFFF ;
+    border: 1.4px solid rgb(120, 131, 136);
+    border-radius: 7%;
+    padding: 3px;
+    letter-spacing: 1.3px;
+    margin-left: 10px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.button-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

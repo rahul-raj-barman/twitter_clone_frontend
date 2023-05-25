@@ -1,0 +1,45 @@
+.popup {
+    position: fixed;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    z-index: 9999;
+  }
+  
+  .popup h2 {
+    margin-top: 0;
+  }
+  
+  .popup form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .popup form label {
+    font-weight: bold;
+  }
+  
+  .popup form input[type="text"],
+  .popup form input[type="file"] {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .popup form button {
+    background-color: #008CBA;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .popup form button:hover {
+    background-color: #0077A2;
+  }
+  

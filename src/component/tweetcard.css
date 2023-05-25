@@ -1,0 +1,126 @@
+.profile-pic img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.retweet-cont {
+    position: relative;
+    display: flex;
+    width: 60vw;
+    align-items: flex-start;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    box-shadow: none;
+    border: 1.3px solid rgb(192, 189, 189);
+    margin-bottom: 3px;
+}
+
+.retweet-cont:hover {
+    background-color: aliceblue;
+}
+
+@media only screen and (max-width: 620px) {
+    .retweet-cont {
+        width: 80%;
+        position: relative;
+        left: 10vw;
+        top: 3vh;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .retweet-cont {
+        position: relative;
+        left: 5vw;
+        top: -20vh;
+        width: 70vw;
+        top: 3vh;
+    }
+    .retweet-comment {
+        width: fit-content;
+        font-size: .8rem;
+        word-wrap: break-word;
+        max-width: 200px;
+        position: relative;
+        left: 0px;
+    }
+}
+
+.retweet-details {
+    display: flex;
+}
+
+.retweeted-by {
+    margin-bottom: 5px;
+    color: rgb(134, 131, 131);
+}
+
+.profile-pic {
+    position: relative;
+    top: 12px;
+
+}
+
+.profile-name a {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: black !important;
+    text-decoration: none;
+}
+
+.retweet-date {
+    margin-bottom: 5px;
+    font-size: 1.07rem;
+    color: rgb(91, 89, 89);
+}
+
+.retweet-comment {
+    margin-bottom: 5px;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    max-width: 55vw;
+    word-break: break-all;
+    letter-spacing: .3px;
+    color: rgb(50, 50, 50);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.retweet-icons {
+    cursor: pointer;
+    width: 16%;
+    opacity: .9;
+    min-width: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.retweet-icons div:hover {
+    
+    border-radius: 20%;
+    background-color: rgb(208, 233, 255);
+}
+
+.retweet-icons div span {
+    margin: 6px;
+}
+
+.likes {
+    color: rgb(118, 118, 217);
+    cursor: pointer;
+    background-color: white;
+}
+
+
+.tweet-image img {
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+.del-post {
+    position: absolute;
+    right: 12px;
+    top: 16px;
+    color: rgb(79, 79, 79);
+}

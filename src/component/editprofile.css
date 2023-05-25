@@ -1,0 +1,56 @@
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.edit-cont {
+    position: fixed;
+    left: 40%;
+    z-index: 2;
+    background-color: white;
+    top: 3vh;
+}
+
+.edit-first-section {
+    margin-bottom: 2vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.butt-cont {
+    display: flex;
+    justify-content: flex-end;
+}
+.butt-cont button {
+    margin-right: 5px;
+
+}
+
+.butt-cont button:first-child {
+    background-color: #60666d;
+    border-radius: 5px;
+    color: rgb(224, 223, 223);
+    border:none;
+    font-size: 1.1rem;
+}
+
+.butt-cont button:nth-child(2) {
+    letter-spacing: 1.6px;
+    background-color: #1b81fb;
+    border-radius: 5px;
+    color: rgb(224, 223, 223);
+    border:none;
+    font-size: 1.1rem;
+}
+
+.edit-cont {
+    border: 1.7px solid rgb(200, 200, 200);
+    padding: 10px;
+}
+
+.edit-form input {
+    border-radius: 5px;
+    padding: 3px;
+    padding-left: 7px;
+}
