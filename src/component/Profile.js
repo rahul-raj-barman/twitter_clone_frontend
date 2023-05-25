@@ -9,6 +9,7 @@ import Tweetcard from './Tweetcard'
 import UploadProfilePic from './UploadProfilePic';
 import Editprofile from './Editprofile';
 import './profile.css'
+import user from '../images/user.png'
 
 
 const Profile = () => {
@@ -120,7 +121,7 @@ const Profile = () => {
             <div className="profile-identity">
                 <div className="profile-img">
                 {
-                    <img src={`http://localhost:5000/images/${profileImg}`} onError={(e) => e.target.src = 'https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80'} alt="not found" />
+                    <img src={`${API_URL}images/${profileImg}`} onError={(e) => e.target.src = {user}} alt="not found" />
                 }
                 </div>
                 {
