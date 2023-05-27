@@ -14,18 +14,15 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  useLocation
 } from "react-router-dom";
 import Homepage from './pages/Homepage';
 import Singletweet from './pages/Singletweet';
 
-const user = localStorage.getItem('loggedInUser')
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
   <Provider store = {store}>
   <BrowserRouter>
-    
     <Sidebar/>
     
     <Routes>

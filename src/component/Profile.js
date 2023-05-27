@@ -10,7 +10,9 @@ import UploadProfilePic from './UploadProfilePic';
 import Editprofile from './Editprofile';
 import './profile.css'
 import user from '../images/user.png'
-
+import { update } from '../states/action-creators';
+import swal from 'sweetalert2'
+import Spinner from 'react-bootstrap/Spinner';
 
 const Profile = () => {
     const [userData, setUserData] = useState(null);
@@ -18,12 +20,17 @@ const Profile = () => {
     const [profileImg, setProfileImg] = useState("");
     const [picPopup, setPicPopup] = useState(false)
     const [editpopup, setEditpopup] = useState(false)
+    const[loading, setLoading] = useState(false)
 
     const[following, setFollowing] = useState(false);
     const delState = useSelector(state => state.delpost)
     const current_user = localStorage.getItem("curr_profile")
     const user = localStorage.getItem('userId')
+
+    const updateState = useSelector(state => state.update)
+
     useEffect(() => {
+        setLoading(true);
         const header = {
             headers : {
                 Authorization: "Bearer " + localStorage.getItem('userToken')
@@ -33,11 +40,12 @@ const Profile = () => {
         .then((data) => {
             console.log(data.data)
             setUserData(data.data);
+            setLoading(false);
         })
         .catch((err) => {
             console.log(err)
         })
-    }, [current_user, delState])
+    }, [current_user, delState, updateState])
     useEffect(() => {
         const userToken = localStorage.getItem("userToken")
         const header = {
@@ -54,7 +62,7 @@ const Profile = () => {
         .catch((err) => {
           console.log(err)
         })
-      },[delState])
+      },[delState, updateState])
       useEffect(() => {
         if(userData && userData.profilePic) {
             const filename = userData.profilePic.slice(7);
@@ -105,6 +113,11 @@ const Profile = () => {
 
     return (
         <>
+        {
+            loading ?  <div style={{position: 'absolute', right: '40vw', top: '30vh'}}><Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner></div>:null
+        }
         {
             editpopup ? <Editprofile switch={handleEditPopup}/> : null
         }

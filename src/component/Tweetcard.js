@@ -22,6 +22,7 @@ const Retweet = (props) => {
     const [showDel, setShowdel] = useState(false)
     const [retweeted, setRetweeted] = useState(false);
 
+    const updateState = useSelector(state => state.update);
     const delState = useSelector(state => state.delpost)
     const navigate = useNavigate();
     

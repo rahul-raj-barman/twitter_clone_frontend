@@ -8,7 +8,7 @@ import Swal from 'sweetalert2'
 import userpic from '../images/user.png'
 import axios from 'axios';
 import { API_URL } from '../config'
-
+import { useSelector } from 'react-redux';
 
 function ActiveExample() {
   const [prevActive, setPrevActive] = useState("")
@@ -20,6 +20,8 @@ function ActiveExample() {
   const navigate = useNavigate();
   const location = useLocation();
   const elementRef = useRef(null)
+
+  const updateState = useSelector(state => state.update);
 
   useEffect(() => {
     if(elementRef.current) {
@@ -58,7 +60,7 @@ function ActiveExample() {
       console.log(err);
     })
     
-  },[])
+  },[updateState])
 
   const handleActive = (e) => {
     if(!localStorage.getItem('userToken')) {
@@ -90,11 +92,10 @@ function ActiveExample() {
       localStorage.removeItem('loggedInUser');
       localStorage.removeItem('userToken')
       navigate('/login');
-      window.location.reload();
 
   }
-
-  return (
+  if(location.pathname !== '/login' && location.pathname !== '/register')  return (
+    
     <div className='sidebar-cont' ref={elementRef}>
         <div className="sidebar">
             <ul>
@@ -117,7 +118,7 @@ function ActiveExample() {
 
             {
               user&&user.userName ? <div id='userProfile'>
-              <img style={{borderRadius: '10px'}} src={user.profilePic ? `http://localhost:5000/images/${user.profilePic.slice(7)}` : userpic} alt="" height={`25px`}/>
+              <img style={{borderRadius: '10px'}} src={user.profilePic ? `${API_URL}images/${user.profilePic.slice(7)}` : userpic} alt="" height={`25px`}/>
               <span style={{fontSize: '1.2rem'}}>{user.name} <br /> <span style={{fontSize: '.9rem'}} id='email-span'>@{user.email.slice(0, user.email.indexOf('@'))}</span> </span>
             </div>: null
             }

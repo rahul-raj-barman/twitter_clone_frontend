@@ -197,7 +197,7 @@ function Singletweet() {
     }
     <div className='retweet-cont custom-cont'>
     <div className='profile-pic me-2'>
-        <img src="https://images.unsplash.com/photo-1682704109522-56a6fbc1962e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=415&q=80" alt="not found" />
+        <img src={`${API_URL}${post ? post.tweetedBy.profilePic: null}`} alt="not found" />
     
     </div>
     
@@ -213,7 +213,7 @@ function Singletweet() {
         {
         post && post.image ? 
         <div className='tweet-image'>
-            <img src={post ?  `http://localhost:5000/${post.image}` : null} alt="not found" />
+            <img src={post ?  `${API_URL}${post.image}` : null} alt="not found" />
         </div>: null
         }
         <div className="retweet-icons">
@@ -240,6 +240,7 @@ replies.length ? <div style={{marginBottom:'1vh'}}>Replies</div>: null
             return (
                 <Tweetcard likesArray = {obj.likes}  
                 key = {obj._id} 
+                profilepic = {post.tweetedBy.profilePic}
                 post_id={obj._id}
                 retweetBy={post.retweetBy}
                   cont={obj.content}

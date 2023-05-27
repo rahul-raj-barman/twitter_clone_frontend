@@ -184,6 +184,7 @@ function Homepage() {
                     likesArray = {foundTweet.likes}   
                     post_id={foundTweet._id}
                     retweetBy={tweet.retweetBy}
+                    profilepic = {tweet.tweetedBy.profilePic}
                       cont={foundTweet.content}
                       image={foundTweet.image ? foundTweet.image : null}
                       user={foundTweet.tweetedBy.userName}

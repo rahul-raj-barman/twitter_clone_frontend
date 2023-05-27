@@ -3,23 +3,32 @@ import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios'
 import { API_URL } from '../config';
-
+import { useSelector, useDispatch } from 'react-redux'
+import { actionCreators } from '../states'
+import swal from 'sweetalert2';
 
 function UploadProfilePic(props) {
 
     const [image, setImage] = useState("") 
     const [display, setDisplay] = useState("visible")
+
+    const dispatch = useDispatch();
+    const updateState = useSelector(state => state.update)
+
+    
+
     const handleProfilePic = () => {
+        console.log(updateState)
         setDisplay('hidden')
-        console.log("yes")
-        console.log(image)
         const user = localStorage.getItem('curr_profile')
         const formData = new FormData();
         formData.append('file', image)
         axios.post(`${API_URL}file/${user}/uploadProfilePic`, formData)
         .then((data) => {
           console.log(data)
-          window.location.reload();
+          // window.location.reload();
+          dispatch(actionCreators.update('update'))
+
         })
         .catch((err) => {
           console.log(err)
