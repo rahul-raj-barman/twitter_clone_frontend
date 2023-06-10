@@ -12,6 +12,7 @@ import './profile.css'
 import user from '../images/user.png'
 import { update } from '../states/action-creators';
 import swal from 'sweetalert2'
+import userpic from '../images/user.png'
 import Spinner from 'react-bootstrap/Spinner';
 
 const Profile = () => {
@@ -134,7 +135,7 @@ const Profile = () => {
             <div className="profile-identity">
                 <div className="profile-img">
                 {
-                    <img src={`${API_URL}images/${profileImg}`} onError={(e) => e.target.src = {user}} alt="not found" />
+                    <img src={profileImg ? `${API_URL}${profileImg}` : userpic} onError={(e) => e.target.src = {user}} alt="not found" />
                 }
                 </div>
                 {
