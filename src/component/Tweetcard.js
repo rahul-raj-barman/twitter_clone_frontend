@@ -236,7 +236,7 @@ const Retweet = (props) => {
                 {
                 props.image ? 
                 <div className='tweet-image'>
-                    <img src={`http://localhost:5000/${props.image}`} alt="not found" />
+                    <img src={`${API_URL}/${props.image}`} alt="not found" />
                 </div>: null
                 }
                 <div className="retweet-icons">
