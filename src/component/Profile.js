@@ -134,7 +134,7 @@ const Profile = () => {
             <div className="profile-identity">
                 <div className="profile-img">
                 {
-                    <img src={`${API_URL}${profileImg}`} onError={(e) => e.target.src = {user}} alt="not found" />
+                    <img src={`${API_URL}images/${profileImg}`} onError={(e) => e.target.src = {user}} alt="not found" />
                 }
                 </div>
                 {
