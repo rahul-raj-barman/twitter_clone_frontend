@@ -135,7 +135,7 @@ const Profile = () => {
             <div className="profile-identity">
                 <div className="profile-img">
                 {
-                    <img src={profileImg ? `${API_URL}+'images/'+${profileImg}` :userpic} alt="not found" />
+                    <img src={profileImg ? `${API_URL}+images/+${profileImg}` :userpic} alt="not found" />
                 }
                 </div>
                 {
