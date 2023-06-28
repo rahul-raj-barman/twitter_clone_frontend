@@ -9,7 +9,6 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import './tweetcard.css';
-import userpic from '../images/user.png'
 import Swal from 'sweetalert2'
 import user from '../images/user.png';
 
@@ -208,9 +207,13 @@ const Retweet = (props) => {
     }
 
     return (
+      
         <div className='retweet-cont' onClick={props.onClick}>
             <div className='profile-pic me-2'>
-                <img src={`${API_URL}images/${props.profilepic ? props.profilepic.slice(7) : user}`}  alt="couldn't found" />
+            {
+              console.log("user is   " + user)
+            }
+                <img src={props.profilepic ? `${API_URL}images/${props.profilepic.slice(7)}` : user}  alt="couldn't found" />
             
             </div>
             
